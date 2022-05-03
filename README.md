@@ -8,6 +8,8 @@ Contents
 4. Huffman Decoding Explanation
 5. Command Processor Explanation
 6. Final Working Image Screenshot
+7. Conclusion
+8. References
 
 Overall Summary
 
@@ -70,3 +72,25 @@ Case insensitive, backspace functionality added along with carriage return and l
 5. Analyze : 	Calculates the compression gains (in percentage) with formula used - (original length - compressed length)/(original_length) * 100
 6. Other   :	Just a function to let the user know that command table is scalable
 7. help	   :	Prints the help box for all the commands. (the entire command table)
+
+Overall Program Flow
+
+Final Working Image Screenshot
+![PES_PROJECT_SUBMISSION_SCREENSHOT](https://user-images.githubusercontent.com/89497188/166405261-35e58a93-0bdb-4d50-b610-cda4763b90c7.jpg)
+
+Conclusion
+
+This is a basic project to let the user know about the huffman coding and decoding process on a KL25Z embedded system ARM cortex M0+ processor
+Even though this is not the best route, I have to designed a working model that inputs and outputs the encoded and decoded strings in the terminal via UART.
+I have done this because of lack of that much availability of resources to connect to a serial port on a windows machine. I have created a command processor to demonstrate the working. Apologies for that. Given another chance I would definitely work towards getting the serial port part also working on a windows or a linux machine byt obtaining one or possibly dual-booting my system.
+
+Acknowledgments
+
+I express my gratitude to professor Howdy Pierce for giving me an opportunity to do this project and develop an indepth understanding and imbibing good confidence on developing programs on embedded C.
+I extend my thanks to the Teaching Assistants Ms Mukta Darekar and Mr Nimish bhide for the continuous support throughout this journey, without them I couldnt have managed to crack the bi-weekly assignments and inturn the course.
+I also am thankful to my fellow colleagues for giving a helping hand whenever I was in dire need of technical assistance.
+
+References
+
+1. https://www.programiz.com/python-programming/examples/ascii-character
+2. Professor Howdy' Pierce lecture on command processing, serial part II and media compression
