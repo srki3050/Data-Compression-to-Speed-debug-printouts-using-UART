@@ -197,9 +197,12 @@ void process_command(char *input){
 }
 
 char *accumulate(char *name){
+  uint32_t mask;
+
   char ch;
   int i = 0;
   char backup_buffer[MAX_SIZE];
+  mask = __get_PRIMASK();
 	while(ch != 0x0D){
 		while(bufferempty(&cb_RX) == 1);
 		dequeue(&cb_RX,&ch,1);
@@ -216,6 +219,7 @@ char *accumulate(char *name){
 		}
 		putchar(ch);
 	}
+	__set_PRIMASK(mask);
 	__builtin_memcpy(name,backup_buffer,sizeof(backup_buffer));
 	return (char *)name;
 }
