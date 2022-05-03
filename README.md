@@ -84,6 +84,10 @@ This is a basic project to let the user know about the huffman coding and decodi
 Even though this is not the best route, I have to designed a working model that inputs and outputs the encoded and decoded strings in the terminal via UART.
 I have done this because of lack of that much availability of resources to connect to a serial port on a windows machine. I have created a command processor to demonstrate the working. Apologies for that. Given another chance I would definitely work towards getting the serial port part also working on a windows or a linux machine byt obtaining one or possibly dual-booting my system.
 
+Further Enhancements
+
+This project can be enhanced to produce a large number of message handling. And can further be explored in audio and video for the same.
+
 Acknowledgments
 
 I express my gratitude to professor Howdy Pierce for giving me an opportunity to do this project and develop an indepth understanding and imbibing good confidence on developing programs on embedded C.
