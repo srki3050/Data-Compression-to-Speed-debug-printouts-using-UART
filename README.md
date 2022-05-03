@@ -7,9 +7,11 @@ Contents
 3. Huffman Encoding Explanation
 4. Huffman Decoding Explanation
 5. Command Processor Explanation
-6. Final Working Image Screenshot
-7. Conclusion
-8. References
+6. Overall Program Flow
+7. Test Suites
+8. Final Working Image Screenshot
+9. Conclusion
+10. References
 
 Overall Summary
 
@@ -75,6 +77,13 @@ Case insensitive, backspace functionality added along with carriage return and l
 
 Overall Program Flow
 ![software flow](https://user-images.githubusercontent.com/89497188/166406431-8e126303-cb03-4279-bb8a-d5df84951ea5.jpg)
+
+Test Suites
+1. Python code testing done to test whether huffman tree is getting generated for any kind of file for any characters in the ASCII range
+2. Circular buffer working test under various conditions
+3. Huffman Encoding and Decoding test for a given message
+4. Command processor test commands like author, etc... given to test the command processor operation.
+
 Final Working Image Screenshot
 ![PES_PROJECT_SUBMISSION_SCREENSHOT](https://user-images.githubusercontent.com/89497188/166405261-35e58a93-0bdb-4d50-b610-cda4763b90c7.jpg)
 
