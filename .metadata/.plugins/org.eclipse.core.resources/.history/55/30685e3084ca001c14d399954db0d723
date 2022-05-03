@@ -1,0 +1,139 @@
+/*
+ * Huffman codes
+ *
+ * THIS FILE IS AUTO-GENERATED...Do not Edit
+ */
+#ifndef HUFFCODES_H_
+#define HUFFCODES_H_
+
+#include<stdint.h>
+
+typedef struct{
+    unsigned char symbol;       //Symbol being Coded
+    uint32_t code;              //Binary code for symbol
+    int code_bits;              //Number of bits in code
+}huffman_code_t;
+#define HUFF_CODE_END_SYMBOL '\0'
+#define HUFF_CODE_MIN_LENGTH (3)
+#define HUFF_CODE_MAX_LENGTH (19)
+
+huffman_code_t huffman_code[] = {
+{']',0x00,6},         // ] : 000000
+{'W',0x010,10},         // W : 0000010000
+{'z',0x011,10},         // z : 0000010001
+{'?',0x048,12},         // ? : 000001001000
+{'q',0x049,12},         // q : 000001001001
+{'G',0x025,11},         // G : 00000100101
+{'j',0x04c,12},         // j : 000001001100
+{'&',0x0134,14},         // & : 00000100110100
+{'^',0x026a,15},         // ^ : 000001001101010
+{'}',0x026b0,19},         // } : 0000010011010110000
+{'{',0x026b1,19},         // { : 0000010011010110001
+{'`',0x01359,18},         // ` : 000001001101011001
+{'|',0x009ad,17},         // | : 00000100110101101
+{'	',0x04d7,16},         // 	 : 0000010011010111
+{'~',0x009b,13},         // ~ : 0000010011011
+{'>',0x027,11},         // > : 00000100111
+{')',0x05,8},         // ) : 00000101
+{'(',0x06,8},         // ( : 00000110
+{'w',0x07,8},         // w : 00000111
+{'2',0x01,5},         // 2 : 00001
+{':',0x1,4},         // : : 0001
+{'F',0x040,9},         // F : 001000000
+{'O',0x041,9},         // O : 001000001
+{'E',0x21,8},         // E : 00100001
+{'S',0x22,8},         // S : 00100010
+{'X',0x08c,10},         // X : 0010001100
+{'Y',0x234,12},         // Y : 001000110100
+{'Q',0x235,12},         // Q : 001000110101
+{'+',0x236,12},         // + : 001000110110
+{';',0x08dc,14},         // ; : 00100011011100
+{'!',0x08dd,14},         // ! : 00100011011101
+{'<',0x08de,14},         // < : 00100011011110
+{'Z',0x08df,14},         // Z : 00100011011111
+{'N',0x047,9},         // N : 001000111
+{'6',0x09,6},         // 6 : 001001
+{'c',0x05,5},         // c : 00101
+{'n',0x06,5},         // n : 00110
+{'d',0x07,5},         // d : 00111
+{'_',0x40,8},         // _ : 01000000
+{'I',0x41,8},         // I : 01000001
+{'g',0x21,7},         // g : 0100001
+{'9',0x11,6},         // 9 : 010001
+{'7',0x12,6},         // 7 : 010010
+{'u',0x13,6},         // u : 010011
+{'8',0x14,6},         // 8 : 010100
+{'R',0x54,8},         // R : 01010100
+{'A',0x55,8},         // A : 01010101
+{'-',0x2b,7},         // - : 0101011
+{'p',0x16,6},         // p : 010110
+{'5',0x17,6},         // 5 : 010111
+{'s',0x0c,5},         // s : 01100
+{'U',0x0d0,9},         // U : 011010000
+{'T',0x0d1,9},         // T : 011010001
+{'B',0x0d2,9},         // B : 011010010
+{'V',0x34c,11},         // V : 01101001100
+{'H',0x34e,11},         // H : 01101001110
+{'%',0x1a78,14},         // % : 01101001111000
+{'@',0x34f2,15},         // @ : 011010011110010
+{'J',0x34f3,15},         // J : 011010011110011
+{'*',0x34f4,15},         // * : 011010011110100
+{'#',0x1a7b,14},         // # : 01101001111011
+{'K',0x69f,12},         // K : 011010011111
+{'/',0x35,7},         // / : 0110101
+{',',0x0d8,9},         // , : 011011000
+{'M',0x0d9,9},         // M : 011011001
+{'=',0x6d,8},         // = : 01101101
+{'C',0x6e,8},         // C : 01101110
+{'x',0x6f,8},         // x : 01101111
+{'t',0x0e,5},         // t : 01110
+{'i',0x0f,5},         // i : 01111
+{' ',0x4,3},         //   : 100
+{'r',0x14,5},         // r : 10100
+{'P',0xa8,8},         // P : 10101000
+{'L',0x152,9},         // L : 101010010
+{'"',0x153,9},         // " : 101010011
+{'b',0x55,7},         // b : 1010101
+{'3',0x2b,6},         // 3 : 101011
+{'0',0xb,4},         // 0 : 1011
+{'f',0x60,7},         // f : 1100000
+{'y',0xc2,8},         // y : 11000010
+{'v',0xc3,8},         // v : 11000011
+{'.',0x31,6},         // . : 110001
+{'k',0x32,6},         // k : 110010
+{'l',0x33,6},         // l : 110011
+{'1',0x1a,5},         // 1 : 11010
+{'m',0x6c,7},         // m : 1101100
+{'o',0x37,6},         // o : 110111
+{'e',0xe,4},         // e : 1110
+{'4',0x3c,6},         // 4 : 111100
+{'D',0x7a,7},         // D : 1111010
+{'[',0x7b,7},         // [ : 1111011
+{'a',0x3e,6},         // a : 111110
+{'h',0x3f,6},         // h : 111111
+{HUFF_CODE_END_SYMBOL,0,0}};
+
+/* @brief - With the above specified huffman tree, this function writes the algorithm to encode
+             every symbol to its corresponding huffman code to send over UART. Called in Sys_write
+             system call function, the data is compressed in here.
+*  Parameters
+*  message - The entire message to be encoded
+*  buffer  - A buffer to store the output encoded messages
+*  nbytes  - Size of the buffer to ensure that there is no buffer overflow in any given scenario
+*  Returns
+            The number of bytes successfully encoded
+*/
+int huffman_encode(const char *message,uint8_t *buffer,size_t nbytes);
+
+/* @brief - Once the huffman encoding is completed perform huffman decoding
+*  Parameters
+*  coded   					- The buffer which has the compressed bits
+*  codebytes    			- size of the encoder buffer
+*  resultant_buffer 		- The resultant buffer where you have to store the decoded string
+*  Returns
+            The number of bytes successfully encoded
+*/
+int huffman_decode(uint8_t *coded, size_t codedbytes,char *resultant_buffer);
+
+
+#endif /* HUFFCODES_H_ */

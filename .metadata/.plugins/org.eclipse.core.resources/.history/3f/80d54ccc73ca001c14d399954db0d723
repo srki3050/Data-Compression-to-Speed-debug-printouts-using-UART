@@ -1,0 +1,92 @@
+/*
+ * huffcodes.h
+ *
+ *  Created on: May 1, 2022
+ *      Author: SK's Login
+ */
+
+#ifndef HUFFCODES_H_
+#define HUFFCODES_H_
+
+#include "stdint.h"
+
+typedef struct{
+    unsigned char symbol;       //Symbol being Coded
+    uint32_t code;              //Binary code for symbol
+    int code_bits;              //Number of bits in code
+}huffman_code_t;
+#define HUFF_CODE_END_SYMBOL '\0'
+#define HUFF_CODE_MIN_LENGTH (3)
+#define HUFF_CODE_MAX_LENGTH (10)
+
+huffman_code_t huffman_code[] = {
+{'g',0x00,5},         // g : 00000
+{'p',0x01,5},         // p : 00001
+{':',0x040,10},         // : : 0001000000
+{'/',0x041,10},         // / : 0001000001
+{';',0x042,10},         // ; : 0001000010
+{'G',0x043,10},         // G : 0001000011
+{'A',0x11,8},         // A : 00010001
+{'L',0x048,10},         // L : 0001001000
+{'P',0x049,10},         // P : 0001001001
+{'T',0x025,9},         // T : 000100101
+{'7',0x04c,10},         // 7 : 0001001100
+{'q',0x04d,10},         // q : 0001001101
+{'6',0x04e,10},         // 6 : 0001001110
+{'E',0x04f,10},         // E : 0001001111
+{'S',0x0a,7},         // S : 0001010
+{'0',0x16,8},         // 0 : 00010110
+{'x',0x17,8},         // x : 00010111
+{'m',0x03,5},         // m : 00011
+{'s',0x2,4},         // s : 0010
+{'d',0x06,5},         // d : 00110
+{'u',0x0e,6},         // u : 001110
+{'f',0x0f,6},         // f : 001111
+{'h',0x08,5},         // h : 01000
+{'c',0x09,5},         // c : 01001
+{'o',0x5,4},         // o : 0101
+{'e',0x3,3},         // e : 011
+{'w',0x20,6},         // w : 100000
+{'I',0x42,7},         // I : 1000010
+{'.',0x43,7},         // . : 1000011
+{'l',0x11,5},         // l : 10001
+{'a',0x9,4},         // a : 1001
+{'b',0x28,6},         // b : 101000
+{'y',0x29,6},         // y : 101001
+{'n',0x15,5},         // n : 10101
+{'t',0xb,4},         // t : 1011
+{'r',0xc,4},         // r : 1100
+{'C',0xd0,8},         // C : 11010000
+{'k',0x1a2,9},         // k : 110100010
+{'8',0x346,10},         // 8 : 1101000110
+{'2',0x347,10},         // 2 : 1101000111
+{'v',0x69,7},         // v : 1101001
+{'1',0xd4,8},         // 1 : 11010100
+{'-',0xd5,8},         // - : 11010101
+{',',0x6b,7},         // , : 1101011
+{'i',0x1b,5},         // i : 11011
+{' ',0x7,3},         //   : 111
+{HUFF_CODE_END_SYMBOL,0,0}};
+
+/* @brief - With the above specified huffman tree, this function writes the algorithm to encode
+             every symbol to its corresponding huffman code to send over UART. Called in Sys_write
+             system call function, the data is compressed in here.
+*  Parameters
+*  message - The entire message to be encoded
+*  buffer  - A buffer to store the output encoded messages
+*  nbytes  - Size of the buffer to ensure that there is no buffer overflow in any given scenario
+*  Returns
+            The number of bytes successfully encoded
+*/
+int huffman_encode(const char *message,uint8_t *buffer,size_t nbytes);
+/* @brief - Once the huffman encoding is completed perform huffman decoding
+*  Parameters
+*  coded   - The buffer which has the compressed bits
+*  buffer  - A buffer to store the output encoded messages
+*  nbytes  - Size of the buffer to ensure that there is no buffer overflow in any given scenario
+*  Returns
+            The number of bytes successfully encoded
+*/
+int huffman_decode(uint8_t *coded, size_t codedbytes,char *message);
+
+#endif /* HUFFCODES_H_ */

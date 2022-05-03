@@ -1,0 +1,3 @@
+huffcodes.c:28:17:grab_code	56	static
+huffcodes.c:46:5:huffman_encode	64	static
+huffcodes.c:91:5:huffman_decode	48	static

@@ -1,2 +1,72 @@
 # ECEN-5813---Course-Project
 Print Debug Printouts using Huffman Compression and Decompression using KL25Z
+
+Contents
+1. Overall Summary
+2. Python Code to Generate a huffcodes.h file
+3. Huffman Encoding Explanation
+4. Huffman Decoding Explanation
+5. Command Processor Explanation
+6. Final Working Image Screenshot
+
+Overall Summary
+
+This course project develops Huffman Encoding and Decoding Algorithm and write data to KL25Z.
+1. Technically, the decoding should have been done in the PC side. But since I only posses a windows machine, I just had to print my encoded and decoded
+   Strings in the command line processor.
+2. I have written a python code that develops the .h file for any given text file. I have used my friend's debug files from his linux system so that, 
+   I am able to do python coding to generate the huffman table for that. (main.py)
+3. Then I perform the huffman Encoding on the command processor on typing command = "encoded"
+4. Decoding is performed by typing the command = "Decoded"
+5. The gains from huffman calculation is figured out by the formula gains = ((original_length - compressed_length)/(original_length))
+   gains in percentage = gains * 100, so that you can display integer values, it is generally difficult and not advisable to use float prints in embedded system microcontrollers.
+
+Python Code to Generate a huffcodes.h file
+1. There is a python project attached with the folder name Python Projects that has a python code that outputs a huffcodes.h file
+   step.1 Create a log_files.txt file that has the terminal debug printouts
+   step.2 Store the contents of the file into a python string
+   step.3 create a huffman tree.
+   step.4 Print the necessary statements as a part of the .h file
+   step.5 Extract the values from the created dictionary and change it into huffcodes.h format (You may need to do some math conversions and stuff.
+   step.6 Print that in the order that it makes it easier for the user to directly use the stdout to the file huffman.h
+
+Huffman Encoding
+
+So, when we are outputting symbols, at some point we have outputted a byte and 5 symbols of the next byte. Then we have 3 bits left. 
+Now we have an output buffer where there is a pointer that is currently at the last encoded bit. And records that 5bits of that byte are encoded.
+Now you need to encode a symbol that is 4 bits
+Now the current byte has 5 bits filled and you need to encode a 4bit symbol (say 1010)
+The last 3 bits will be filled with 101 and move to the next byte to stick in the last number (0) in the first bit of that byte.
+Caller passes in a message, a buffer where they want the output to be stored, and the number of bytes in that buffer to prevent overflow.
+Now we traverse through the input message until the end of the message. (Via for loop).
+Inside that for loop, we perform a linear search of the Huffman code table looking for the first character in the table (i.e., the symbol) until it is equal to the character we are looking for (i.e., p)
+	Note: There is a sentinel at the bottom of the table. So, when we have an illegal input, we somehow fall out loop at some point. Hence, we assert to keep testing whether the table has ended.
+Once we fall out of the loop.
+Now, store the Huffman code and Huffman code length of the current symbol in a variable.
+Start encoding the bits
+Now, find the minimum of number of bits of the current Huffman code, and then compare it with the number of available bits of the current byte. Test whether the sum of current bits and current written bits is less than a byte.
+Now, the next bits will shift it to the right (i.e., move to the next byte), and MASK of the rest of the bits of that byte.
+
+grab_code (static function)
+
+Gets the code remaining to be decoded and returns the huffman code required for the current symbol.
+Huffman Decoding
+
+Huffman decoding is generally the reverse of a huffman encoding.
+Here you store the length of the current huffman bit and check whether if that bit is received. Print that back to the system
+The static function grab_code get the code for that particular symbol.
+Test if the code is less than the max length of the code and start storing that in a variable P.
+once p is fully filled out, print p.
+
+
+Command Processor Commands
+
+Case insensitive, backspace functionality added along with carriage return and line feed functionalities.
+
+1. Author: Prints the author name
+2. Original:	Prints the string that you want to print
+3. Encoded :	Prints the encoded strings through UART
+4. Decoded :	Prints the decoded strings back to the same UART terminal
+5. Analyze : 	Calculates the compression gains (in percentage) with formula used - (original length - compressed length)/(original_length) * 100
+6. Other   :	Just a function to let the user know that command table is scalable
+7. help	   :	Prints the help box for all the commands. (the entire command table)

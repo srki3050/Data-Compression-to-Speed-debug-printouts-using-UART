@@ -1,0 +1,6 @@
+cbfifo.c:17:6:initialize	16	static
+cbfifo.c:23:8:enqueue	40	static
+cbfifo.c:40:8:dequeue	40	static
+cbfifo.c:58:6:bufferfull	16	static
+cbfifo.c:65:6:bufferempty	16	static
+cbfifo.c:72:10:length	16	static

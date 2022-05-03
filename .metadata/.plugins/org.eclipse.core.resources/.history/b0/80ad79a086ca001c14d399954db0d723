@@ -1,0 +1,26 @@
+/* Name  				: Sricharan Kidambi S
+ * Course				: ECEN 5813 - Embedded System Design - Course Project
+ * Title				: Huffman Compression and Decompression of Debug Printouts
+ * Instructor			: Howdy Pierce
+ * Teaching Assistants	: Mukta Darekar, Nimish Bhide
+ * File  				: KL25Z_Huffman_Encodings
+ * Date	 				: 05/02/2022
+ * Brief 				: Application Entry Point
+ * References			: Initialize the functions, such as baud rate of UART module, the main loop performing
+ * 				  		  The command processing based on the character being typed.
+ */
+#include "app.h"
+
+void command_processor(char *name){
+	char c = getchar();
+		  if(c == '?'){
+			  printf("%c ",c);
+			  accumulate(name);
+			  printf("\r\n");
+			  process_command(name);
+		  }
+		  else{
+			  putchar(c);
+			  printf("\r\n");
+		  }
+}

@@ -1,0 +1,30 @@
+/* Name  		: Sricharan Kidambi S
+ * File  		: main.c
+ * Date	 		: 04/06/2022
+ * Brief 		: Application Entry Point
+ * References	: Initialize the functions, such as baud rate of UART module, the main loop performing
+ * 				  The command processing based on the character being typed.
+ */
+#include "sysclock.h"
+#include "UART.h"
+#include "stdio.h"
+
+#define REQUIRED_BAUD_RATE 38400
+int main(void)
+{
+  sysclock_init();
+  UART0_Init(REQUIRED_BAUD_RATE);
+  // TODO: initialize the UART here
+  char *message1 = "Swapping each";
+  char *message2 = "two-letter group of";
+  char *message3 = "out-going and/or in-coming ascII text";
+  char *message4 = "messages appear to be reversed. example: test message looks";
+  printf("%s",message1);
+  delay(20);
+  printf("%s",message2);
+  delay(20);
+  printf("%s",message3);
+  delay(20);
+  printf("%s",message4);
+  return 0 ;
+}

@@ -1,0 +1,16 @@
+/*
+ * messages.c
+ *
+ *  Created on: May 2, 2022
+ *      Author: SK's Login
+ */
+
+
+void message_encode(char *message){
+    current_encoded_bits = huffman_encode(message,encoder,BUFFER_SIZE);
+    printf("%d\n",current_encoded_bits);
+}
+void message_decode(char *result){
+    bytes_decoded = huffman_decode(encoder,current_encoded_bits,result);
+    printf("%s\n",result);
+}

@@ -1,0 +1,32 @@
+/* Name  				: Sricharan Kidambi S
+ * Course				: ECEN 5813 - Embedded System Design - Course Project
+ * Title				: Huffman Compression and Decompression of Debug Printouts
+ * Instructor			: Howdy Pierce
+ * Teaching Assistants	: Mukta Darekar, Nimish Bhide
+ * File  				: KL25Z_Huffman_Encodings
+ * Date	 				: 05/02/2022
+ * Brief 				: Application Entry Point
+ * References			: Initialize the functions, such as baud rate of UART module, the main loop performing
+ * 				  		  The command processing based on the character being typed.
+ */
+#include "app.h"
+#include "sysclock.h"
+#include "UART.h"
+#include "stdio.h"
+#define REQUIRED_BAUD_RATE 38400
+#define DATA_BIT_MODE 0
+#define PARITY 0
+#define STOP_BITS 1
+#define SIZE 1024
+
+int main(void)
+{
+  sysclock_init();
+  UART0_Init(REQUIRED_BAUD_RATE);
+  // TODO: initialize the UART here
+  char name[SIZE];
+  while(1){
+	  command_processor(name);
+  }
+  return 0 ;
+}

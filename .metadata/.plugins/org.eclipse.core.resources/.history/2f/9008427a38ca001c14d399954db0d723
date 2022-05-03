@@ -1,0 +1,26 @@
+/* Name  		: Sricharan Kidambi S
+ * File  		: main.c
+ * Date	 		: 04/06/2022
+ * Brief 		: Application Entry Point
+ * References	: Initialize the functions, such as baud rate of UART module, the main loop performing
+ * 				  The command processing based on the character being typed.
+ */
+#include "sysclock.h"
+#include "UART.h"
+#include "stdio.h"
+
+#define REQUIRED_BAUD_RATE 38400
+void delay(int time){
+	for(int i = 0;i < time;i++){
+		for(int j = 0;j < 2400;j++);
+	}
+}
+int main(void)
+{
+  sysclock_init();
+  UART0_Init(REQUIRED_BAUD_RATE);
+  // TODO: initialize the UART here
+  printf("Welcome to Breakfast Serial\r\n");
+  delay(30);
+  return 0 ;
+}

@@ -1,0 +1,11 @@
+command_processor.c:102:13:handle_author	16	static
+command_processor.c:105:13:print_original	16	static
+command_processor.c:108:13:encoded_string	24	static
+command_processor.c:113:13:decoded_string	1056	static
+command_processor.c:120:13:handle_help	24	static
+command_processor.c:125:13:handle_other	16	static
+command_processor.c:128:13:parse_data	24	static
+command_processor.c:136:13:huffman_analyze	32	static
+command_processor.c:142:13:print_unknown_command	24	static
+command_processor.c:155:6:process_command	80	static
+command_processor.c:191:7:accumulate	1056	static

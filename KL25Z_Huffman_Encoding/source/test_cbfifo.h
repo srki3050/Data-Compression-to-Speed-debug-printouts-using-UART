@@ -1,0 +1,22 @@
+/* Name  				: Sricharan Kidambi S
+ * Course				: ECEN 5813 - Embedded System Design - Course Project
+ * Title				: Huffman Compression and Decompression of Debug Printouts
+ * Instructor			: Howdy Pierce
+ * Teaching Assistants	: Mukta Darekar, Nimish Bhide
+ * File  				: test_cbfifo.h
+ * Date	 				: 05/02/2022
+ * Brief 				: Prototype of a function that tests the circular buffers basic functionalities
+ * References			: Discussed with Abijith Ananda Krishnan to write test cases for assignment 6 Breakfast Serial
+ * 						  Currently using the same for the course project as well.
+ */
+#ifndef TEST_CBFIFO_H_
+#define TEST_CBFIFO_H_
+
+#include "cbfifo.h"
+#include "assert.h"
+#include "stdio.h"
+#include "string.h"
+
+void test_cbfifo();
+
+#endif /* TEST_CBFIFO_H_ */

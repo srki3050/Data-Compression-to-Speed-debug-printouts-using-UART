@@ -1,0 +1,53 @@
+/* Name  				: Sricharan Kidambi S
+ * Course				: ECEN 5813 - Embedded System Design - Course Project
+ * Title				: Huffman Compression and Decompression of Debug Printouts
+ * Instructor			: Howdy Pierce
+ * Teaching Assistants	: Mukta Darekar, Nimish Bhide
+ * File  				: KL25Z_Huffman_Encodings
+ * Date	 				: 05/02/2022
+ * Brief 				: Application Entry Point
+ * References			: Code majorly inspired by assignment 2 FIFO operations for the course.
+ * 						  Support obtained from Professor Howdy Pierce and course TA's for that assignment
+ */
+
+#ifndef CBFIFO_H_
+#define CBFIFO_H_
+#include "stdint.h"
+#include "stdbool.h"
+
+#define MAX_SIZE 1024
+
+typedef struct{
+    uint8_t buf[MAX_SIZE];
+    uint8_t head;
+    uint8_t tail;
+    size_t length;
+}cbfifo_t;
+
+void initialize(cbfifo_t *cb);
+/* Function : Enqeues the amount of bytes specified in nbytes to the buffer of that object.
+ * Parameters: The cbfifo object, input string, no of bytes to be enqueued from input string.
+ * Returns : The number of nbytes enqueued. (if the space in buffer is 3 and nbytes = 10, then nbytes = 3
+ */
+size_t enqueue(cbfifo_t *cb,void *buf,size_t nbytes);
+/* Function : deqeues the amount of bytes specified in nbytes from the buffer of that object.
+ * Parameters: The cbfifo object, resultant string, no of bytes to be enqueued from input string.
+ * Returns : The number of nbytes dequeued. (if no of elements in buffer is 3 and nbytes = 10, then nbytes = 3
+ */
+size_t dequeue(cbfifo_t *cb,void *buf,size_t nbytes);
+/* Function : check for buffer full condition
+ * Parameters: The cbfifo object.
+ * Returns : 1 if buffer is full, 0 otherwise.
+ */
+bool bufferfull(cbfifo_t *cb);
+/* Function : check for buffer full condition
+ * Parameters: The cbfifo object.
+ * Returns :1 if buffer is empty, 0 otherwise.
+ */
+bool bufferempty(cbfifo_t *cb);
+/* Function 	: calculate the current length of the buffer
+ * Parameters	: The cbfifo object.
+ * Returns		: The length of the current buffer
+ */
+uint32_t length(cbfifo_t *cb);
+#endif /* CBFIFO_H_ */

@@ -1,0 +1,37 @@
+/* Name  				: Sricharan Kidambi S
+ * Course				: ECEN 5813 - Embedded System Design - Course Project
+ * Title				: Huffman Compression and Decompression of Debug Printouts
+ * Instructor			: Howdy Pierce
+ * Teaching Assistants	: Mukta Darekar, Nimish Bhide
+ * File  				: uart.h
+ * Date	 				: 05/02/2022
+ * Brief 				: Prototype declaration to initialize UART as per user requirements, and perform enqueue and dequeue byte-by-byte
+ *						  in Interrupt handler
+ * References			: Initialization code inspired from Dean ch8, IRQ code majorly inspired from professor's lecture.
+ */
+#ifndef UART_H_
+#define UART_H_
+
+#include "MKL25Z4.h"
+#include "cbfifo.h"
+/* For an asynchronous communication it is essential to calculate the UART0
+ * Baud RATE
+ * Stop Bits
+ * Data Size
+ * Parity Bits
+ * This function does that
+ */
+void UART0_Init(uint32_t baud_rate,uint8_t stop_bits,uint8_t data_bits,uint8_t parity_check);
+
+/* Transmitter and receiver objects obtained externally since it had to be initialized while initializing UART
+ * Module.
+ */
+extern cbfifo_t cb_TX,cb_RX;
+
+/* UART0_IRQHandler
+ * Dequeues from Transmission Buffer once the Buffer is filled with sys_write function
+ * Enqueues to receive buffer from the UART->D register
+ * Additional Notes : Operation under critical section for the part of the code not be interrupted by any other circular buffer operation
+ */
+void UART0_IRQHandler(void);
+#endif /* UART_H_ */
