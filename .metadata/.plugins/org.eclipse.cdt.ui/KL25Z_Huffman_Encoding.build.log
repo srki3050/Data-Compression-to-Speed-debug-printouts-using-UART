@@ -1,6 +1,24 @@
-22:05:58 **** Incremental Build of configuration Debug for project KL25Z_Huffman_Encoding ****
+23:09:44 **** Incremental Build of configuration Debug for project KL25Z_Huffman_Encoding ****
 make -r -j16 all 
-make: Nothing to be done for 'all'.
+Building file: ../source/app.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_MKL25Z128VLK4 -DCPU_MKL25Z128VLK4_cm0plus -DFSL_RTOS_BM -DSDK_OS_BAREMETAL -DSDK_DEBUGCONSOLE=0 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -DSDK_DEBUGCONSOLE_UART -D__MCUXPRESSO -D__USE_CMSIS -DDEBUG -I"C:\Courses\Sem-2\PES\Assignments\Course Project\Huffman_coding\KL25Z_Huffman_Encoding\board" -I"C:\Courses\Sem-2\PES\Assignments\Course Project\Huffman_coding\KL25Z_Huffman_Encoding\source" -I"C:\Courses\Sem-2\PES\Assignments\Course Project\Huffman_coding\KL25Z_Huffman_Encoding" -I"C:\Courses\Sem-2\PES\Assignments\Course Project\Huffman_coding\KL25Z_Huffman_Encoding\drivers" -I"C:\Courses\Sem-2\PES\Assignments\Course Project\Huffman_coding\KL25Z_Huffman_Encoding\CMSIS" -I"C:\Courses\Sem-2\PES\Assignments\Course Project\Huffman_coding\KL25Z_Huffman_Encoding\utilities" -I"C:\Courses\Sem-2\PES\Assignments\Course Project\Huffman_coding\KL25Z_Huffman_Encoding\startup" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fmerge-constants -fmacro-prefix-map="../source/"=. -mcpu=cortex-m0plus -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/app.d" -MT"source/app.o" -MT"source/app.d" -o "source/app.o" "../source/app.c"
+Finished building: ../source/app.c
+ 
+Building target: KL25Z_Huffman_Encoding.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -Xlinker -Map="KL25Z_Huffman_Encoding.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -Xlinker --sort-section=alignment -Xlinker --cref -mcpu=cortex-m0plus -mthumb -T KL25Z_Huffman_Encoding_Debug.ld -o "KL25Z_Huffman_Encoding.axf"  ./utilities/fsl_debug_console.o  ./startup/startup_mkl25z4.o  ./source/KL25Z_Huffman_Encoding.o ./source/app.o ./source/cbfifo.o ./source/command_processor.o ./source/huffcodes.o ./source/mtb.o ./source/semihost_hardfault.o ./source/sysclock.o ./source/test_cbfifo.o ./source/uart.o  ./drivers/fsl_clock.o ./drivers/fsl_common.o ./drivers/fsl_flash.o ./drivers/fsl_gpio.o ./drivers/fsl_lpsci.o ./drivers/fsl_smc.o ./drivers/fsl_uart.o  ./board/board.o ./board/clock_config.o ./board/peripherals.o ./board/pin_mux.o  ./CMSIS/system_MKL25Z4.o   
+Memory region         Used Size  Region Size  %age Used
+   PROGRAM_FLASH:       25508 B       128 KB     19.46%
+            SRAM:        6620 B        16 KB     40.41%
+Finished building target: KL25Z_Huffman_Encoding.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "KL25Z_Huffman_Encoding.axf"; # arm-none-eabi-objcopy -v -O binary "KL25Z_Huffman_Encoding.axf" "KL25Z_Huffman_Encoding.bin" ; # checksum -p MKL25Z128xxx4 -d "KL25Z_Huffman_Encoding.bin";
+   text	   data	    bss	    dec	    hex	filename
+  24376	   1132	   5488	  30996	   7914	KL25Z_Huffman_Encoding.axf
+ 
 
-22:05:58 Build Finished. 0 errors, 0 warnings. (took 251ms)
+23:09:45 Build Finished. 0 errors, 0 warnings. (took 1s.453ms)
 

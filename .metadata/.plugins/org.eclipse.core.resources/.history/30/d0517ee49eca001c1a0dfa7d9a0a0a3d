@@ -15,8 +15,10 @@
 #define CARRIAGE_RETURN 0x0D
 #define NEW_LINE 0x0A
 #define BUFFER_SIZE 1024
+#define MESSAGE_SIZE 4096
 
 uint8_t encoder[BUFFER_SIZE];
+uint8_t final_message[BUFFER_SIZE];
 bool is_file_encoded = false;
 
 char *message = "update-alternatives 2021-12-10 11:02:43: run with --install /usr/bin/gnome-www-browser gnome-www-browser /usr/bin/firefox 40";
@@ -117,7 +119,7 @@ static void decoded_string(int argc,char *argv[]){
 	if(is_file_encoded){
 		int message_decoded_bits = huffman_decode(encoder,st.message_encoded_length,result);
 		st.message_original_length = message_decoded_bits;
-		//Assert test to test whether you have got the original message back
+		//Assert test to test whether you have got your original data back
 		assert(strncmp(message,result,strlen(message))==0);
 		printf("\r\n%s",result);
 	}

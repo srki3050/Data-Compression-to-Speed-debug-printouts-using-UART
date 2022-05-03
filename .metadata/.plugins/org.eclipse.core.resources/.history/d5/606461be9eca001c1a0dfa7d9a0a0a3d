@@ -117,7 +117,6 @@ static void decoded_string(int argc,char *argv[]){
 	if(is_file_encoded){
 		int message_decoded_bits = huffman_decode(encoder,st.message_encoded_length,result);
 		st.message_original_length = message_decoded_bits;
-		//Assert test to test whether you have got the original message back
 		assert(strncmp(message,result,strlen(message))==0);
 		printf("\r\n%s",result);
 	}

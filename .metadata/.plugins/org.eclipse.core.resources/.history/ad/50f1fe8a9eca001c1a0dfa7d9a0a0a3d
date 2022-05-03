@@ -114,16 +114,10 @@ static void encoded_string(int argc,char *argv[]){
 }
 static void decoded_string(int argc,char *argv[]){
 	char result[BUFFER_SIZE];
-	if(is_file_encoded){
-		int message_decoded_bits = huffman_decode(encoder,st.message_encoded_length,result);
-		st.message_original_length = message_decoded_bits;
-		//Assert test to test whether you have got the original message back
-		assert(strncmp(message,result,strlen(message))==0);
-		printf("\r\n%s",result);
-	}
-	else{
-		printf("\r\n File Not Yet Encoded, Press Encode to encode the bits first");
-	}
+	int message_decoded_bits = huffman_decode(encoder,st.message_encoded_length,result);
+	st.message_original_length = message_decoded_bits;
+	assert(strncmp(message,result,strlen(message))==0);
+	printf("\r\n%s",result);
 }
 static void handle_help(int argc,char *argv[]){
 	for(int i =0;i < num_commands;i++){
