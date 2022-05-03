@@ -12,6 +12,7 @@ Contents
 8. Final Working Image Screenshot
 9. Conclusion
 10. References
+11. Proposal Questions
 
 Overall Summary
 
