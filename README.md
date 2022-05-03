@@ -74,7 +74,7 @@ Case insensitive, backspace functionality added along with carriage return and l
 7. help	   :	Prints the help box for all the commands. (the entire command table)
 
 Overall Program Flow
-
+![software flow](https://user-images.githubusercontent.com/89497188/166406431-8e126303-cb03-4279-bb8a-d5df84951ea5.jpg)
 Final Working Image Screenshot
 ![PES_PROJECT_SUBMISSION_SCREENSHOT](https://user-images.githubusercontent.com/89497188/166405261-35e58a93-0bdb-4d50-b610-cda4763b90c7.jpg)
 
