@@ -68,7 +68,7 @@ Case insensitive, backspace functionality added along with carriage return and l
 1. Author: Prints the author name
 2. Original:	Prints the string that you want to print
 3. Encoded :	Prints the encoded strings through UART
-4. Decoded :	Prints the decoded strings back to the same UART terminal
+4. Decoded :	Prints the decoded strings back to the same UART terminal. Decoded string produces an error message if not yet encoded.
 5. Analyze : 	Calculates the compression gains (in percentage) with formula used - (original length - compressed length)/(original_length) * 100
 6. Other   :	Just a function to let the user know that command table is scalable
 7. help	   :	Prints the help box for all the commands. (the entire command table)
@@ -94,3 +94,4 @@ References
 
 1. https://www.programiz.com/python-programming/examples/ascii-character
 2. Professor Howdy' Pierce lecture on command processing, serial part II and media compression
+3. Alexander Dean Chapter 8 codes on Serial Communication (Especially UART)
