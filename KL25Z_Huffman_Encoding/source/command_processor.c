@@ -48,7 +48,7 @@ static void print_original(int argc,char *argv[]);
  * Parameters	: argc (holds the count of arguments passed), argv (holding the array of strings)
  */
 static void encoded_string(int argc,char *argv[]);
-/* Function 	: print the decoded strings
+/* Function 	: print the decoded strings, if already encoded
  * Purpose 		: Print the strings back to test whether huffman decoding is working to perfection.
  * return type	: static void
  * Parameters	: argc (holds the count of arguments passed), argv (holding the array of strings)
