@@ -108,3 +108,17 @@ References
 1. https://www.programiz.com/python-programming/examples/ascii-character
 2. Professor Howdy' Pierce lecture on command processing, serial part II and media compression
 3. Alexander Dean Chapter 8 codes on Serial Communication (Especially UART)
+
+Proposal Questions
+1. Functionality project estimated - Huffman Compression and Decompression
+2. Technologie used: Python code to generate huffman tree, C code to integrate huffman encoding and decoding with a command processor for a message.
+3. Key Learnings: Python functions, class initialisation, thereby basics of OOPS concepts. 
+                  C code to develop huffman encoding and decoding with bit-packing. Integrating with command processor to process byte-by-byte transitions over UART
+4. Additional Hardware Requirement: No
+5. Test Suites: Testing is both in python and C
+	5a. Python testing
+		Test the histogram and huffman build tree functionality for different files consisting of various characters in ASCII limits
+	5b. Embedded C testing
+		UART functionlity for random messages
+		command processor function for any commands via UART
+		Huffman encoding and decoding for different messages
